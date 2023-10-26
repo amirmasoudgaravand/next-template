@@ -23,6 +23,7 @@ import {
     BsHouse,
     BsPerson,
 } from "react-icons/bs";
+import SearchMenu from "./SearchMenu";
 
 const TopMenu = (): ReactElement => {
     const theme = useMantineTheme();
@@ -262,6 +263,7 @@ const TopMenu = (): ReactElement => {
                     </Group>
                 </Grid>
             </Paper>
+            <SearchMenu />
         </>
     );
 };
