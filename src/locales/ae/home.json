@@ -1,0 +1,4 @@
+{
+    "currentWeatherInCity": "دمای هوای کنونی $t(common:{{city}})، {{weather}} درجه سانتیگراد می‌باشد",
+    "home": "هذه هي الصفحة الرئيسية"
+}
