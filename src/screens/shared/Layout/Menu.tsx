@@ -2,8 +2,10 @@
 import { Box, Button, Group, Text } from "@mantine/core";
 // eslint-disable-next-line @next/next/no-document-import-in-page
 import MultiLevelSelect from "../MultiLevelSelect";
+import { useRouter } from "next/router";
 
 const Menu = () => {
+    const router = useRouter();
     return (
         <Box
             pl={50}
@@ -74,6 +76,18 @@ const Menu = () => {
                     }}
                 >
                     News & Service
+                </Button>
+                <Button
+                    variant="default"
+                    sx={{
+                        color: "#727272ee",
+                        border: "none",
+                    }}
+                    onClick={() => {
+                        router.push("/task-list");
+                    }}
+                >
+                    Cartable & TaskList
                 </Button>
                 <Button
                     variant="default"

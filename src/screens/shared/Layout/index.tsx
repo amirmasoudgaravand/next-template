@@ -18,7 +18,7 @@ const Layout = (props: LayoutProps) => {
         >
             <TopMenu />
             <Menu />
-            <Box m={0} p={7}>
+            <Box m={0} p={55}>
                 {props.children}
             </Box>
             <Footer />
