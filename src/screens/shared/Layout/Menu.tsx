@@ -19,7 +19,15 @@ const Menu = () => {
             }}
         >
             <Group>
-                <Text weight={"bold"}>DIXONS DIGITAL</Text>
+                <Text
+                    weight={"bold"}
+                    onClick={() => {
+                        router.push("/");
+                    }}
+                    sx={{ cursor: "pointer" }}
+                >
+                    DIXONS DIGITAL
+                </Text>
                 <MultiLevelSelect
                     allowSelectFristColumn
                     title={"How Do I ..."}
@@ -95,18 +103,34 @@ const Menu = () => {
                         color: "#727272ee",
                         border: "none",
                     }}
-                >
-                    Deparmants
-                </Button>
-                <Button
-                    variant="default"
-                    sx={{
-                        color: "#727272ee",
-                        border: "none",
+                    onClick={() => {
+                        router.push("/task-list2");
                     }}
                 >
-                    About Us
+                    Cartable & TaskList2
                 </Button>
+                <MultiLevelSelect
+                    allowSelectFristColumn
+                    title={"Operation"}
+                    options={[
+                        {
+                            code: "Create Appraisal",
+                            label: "Create Appraisal",
+                            value: "1",
+                            onClick: () => {
+                                router.push("/create-appraisal");
+                            },
+                        },
+                        {
+                            code: "Appraisal Archive",
+                            label: "Appraisal Archive",
+                            value: "Appraisal Archive",
+                        },
+                    ]}
+                    name="Appraisal"
+                    value=""
+                    showOnlyTargetValue={false}
+                />
             </Group>
         </Box>
     );

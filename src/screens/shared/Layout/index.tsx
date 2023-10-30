@@ -2,7 +2,7 @@
 import { Box } from "@mantine/core";
 // eslint-disable-next-line @next/next/no-document-import-in-page
 import Footer from "./Footer";
-import Menu from "./Menu";
+import SubMenu from "./Menu";
 import TopMenu from "./TopMenu";
 
 type LayoutProps = {
@@ -17,7 +17,7 @@ const Layout = (props: LayoutProps) => {
             })}
         >
             <TopMenu />
-            <Menu />
+            <SubMenu />
             <Box m={0} p={55}>
                 {props.children}
             </Box>

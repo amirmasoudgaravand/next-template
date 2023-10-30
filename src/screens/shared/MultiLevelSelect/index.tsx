@@ -15,6 +15,7 @@ type SelectOption = {
     value: string;
     code: string;
     subCategories?: SelectOption[];
+    onClick?: () => void;
 };
 
 type MultiLevelSelectProps = {
@@ -161,6 +162,7 @@ const MultiLevelSelect = (props: MultiLevelSelectProps): ReactElement => {
                         <li
                             key={item.value}
                             onClick={() => {
+                                item.onClick?.();
                                 renderSubOptions(item);
                                 if (props.allowSelectFristColumn === true) {
                                     onChange(item.value);

@@ -8,7 +8,7 @@ const Home = (): ReactElement => {
 
     return (
         <Layout>
-            <Box sx={{ width: "80%", margin: "0 auto" }} p={20}>
+            <Box sx={{ margin: "0 auto" }} p={20} pl={0}>
                 <Tabs value={activeTab} onTabChange={setActiveTab}>
                     <Tabs.List>
                         <Tabs.Tab value="dashboard">DASHBOARD</Tabs.Tab>

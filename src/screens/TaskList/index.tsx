@@ -1,24 +1,7 @@
-import {
-    Box,
-    Group,
-    Text,
-    Image,
-    Card,
-    Badge,
-    Button,
-    RingProgress,
-    Avatar,
-    Progress,
-    Grid,
-} from "@mantine/core";
-import Layout from "../shared/Layout";
-import {
-    BsAirplaneEngines,
-    BsAndroid2,
-    BsApple,
-    BsFillStopwatchFill,
-} from "react-icons/bs";
+import { Grid } from "@mantine/core";
+import { BsAirplaneEngines, BsAndroid2, BsApple } from "react-icons/bs";
 import CardTaskList from "../shared/CardTaskList";
+import Layout from "../shared/Layout";
 
 const TaskList = () => {
     return (
