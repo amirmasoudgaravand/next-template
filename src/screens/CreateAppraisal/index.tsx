@@ -1,9 +1,10 @@
 import { Box, Button, Group, Stepper } from "@mantine/core";
 import { useState } from "react";
 import Layout from "../shared/Layout";
-import SelectTemplate from "./SelectTemplate";
-import CreateApp from "./CreateApp";
 import ConfirmAppraisee from "./ConfirmAppraisee";
+import CreateApp from "./CreateApp";
+import ResponsiveCreateAppraisal from "./ResponsiveCreateAppraisal";
+import SelectTemplate from "./SelectTemplate";
 
 const CreateAppraisal = () => {
     const [active, setActive] = useState(0);
@@ -20,11 +21,43 @@ const CreateAppraisal = () => {
                     borderRadius: "3px",
                     boxShadow: "1px 2px 4px #ccc",
                     minHeight: "50vh",
-                    // position: "relative",
                 }}
                 p={36}
+                pt={0}
             >
-                <Stepper active={active} onStepClick={setActive}>
+                <ResponsiveCreateAppraisal
+                    active={active}
+                    setActive={(value) => {
+                        setActive(value);
+                    }}
+                />
+                <Group
+                    sx={{
+                        justifyContent: "space-between",
+                        position: "relative",
+                        top: "60px",
+                        [`@media (max-width: 980px)`]: {
+                            display: "none",
+                        },
+                    }}
+                    mb={"xl"}
+                >
+                    <Button variant="default" onClick={prevStep}>
+                        Back
+                    </Button>
+                    <Button onClick={nextStep}>Next</Button>
+                </Group>
+                <Stepper
+                    active={active}
+                    onStepClick={setActive}
+                    sx={{
+                        width: "80%",
+                        margin: "0 auto",
+                        [`@media (max-width: 980px)`]: {
+                            display: "none",
+                        },
+                    }}
+                >
                     <Stepper.Step
                         label="Select Template"
                         description="Short Description"
@@ -43,21 +76,7 @@ const CreateAppraisal = () => {
                     >
                         <ConfirmAppraisee />
                     </Stepper.Step>
-                    <Stepper.Completed>
-                        Completed, click back button to get to previous step
-                    </Stepper.Completed>
                 </Stepper>
-                <Group
-                    sx={{
-                        justifyContent: "space-between",
-                    }}
-                    mt={"md"}
-                >
-                    <Button variant="default" onClick={prevStep}>
-                        Back
-                    </Button>
-                    <Button onClick={nextStep}>Next step</Button>
-                </Group>
             </Box>
         </Layout>
     );
